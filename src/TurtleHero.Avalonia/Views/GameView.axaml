@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="TurtleHero.Avalonia.Views.GameView">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Левая панель: Статистика персонажа -->
+        <Border Grid.Column="0" Background="#2A2A2A" Padding="15">
+            <StackPanel Spacing="15">
+                <TextBlock Text="🐢 Тортилла" FontSize="20" Foreground="#4CAF50" FontWeight="Bold"/>
+                <TextBlock x:Name="PlayerLevel" Text="Уровень: 1" Foreground="White"/>
+                <TextBlock x:Name="PlayerHP" Text="HP: 50/50" Foreground="#FF5252"/>
+                <TextBlock x:Name="PlayerXP" Text="XP: 0/100" Foreground="#FFD700"/>
+                <Separator Margin="0,10"/>
+                <TextBlock x:Name="PlayerStrength" Text="Сила: 5" Foreground="White"/>
+                <TextBlock x:Name="PlayerAgility" Text="Ловкость: 3" Foreground="White"/>
+                <TextBlock x:Name="PlayerDefense" Text="Защита: 4" Foreground="White"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Основная область: Диалоги/Бой -->
+        <Border Grid.Column="1" Background="#1E1E1E" Padding="20">
+            <ScrollViewer>
+                <StackPanel Spacing="20">
+                    <TextBlock x:Name="MainContent" 
+                              Text="Добро пожаловать в игру!" 
+                              FontSize="16"
+                              TextWrapping="Wrap"
+                              Foreground="White"/>
+                    
+                    <ItemsControl x:Name="OptionsList">
+                        <ItemsControl.ItemContainerTheme>
+                            <ControlTheme TargetType="ContentPresenter">
+                                <Setter Property="Margin" Value="0,10"/>
+                            </ControlTheme>
+                        </ItemsControl.ItemContainerTheme>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</UserControl>
+

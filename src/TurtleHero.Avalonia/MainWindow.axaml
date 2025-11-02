@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="TurtleHero.Avalonia.MainWindow"
+        Title="Черепашка-герой 🐢"
+        Width="1000" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="FontFamily" Value="Consolas, Courier New, monospace"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Styles>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ContentControl x:Name="ContentArea" Grid.Row="0"/>
+        
+        <!-- Панель подсказок -->
+        <Border Grid.Row="1" Background="#1E1E1E" Padding="10">
+            <TextBlock x:Name="HintText" 
+                      Foreground="Gray" 
+                      Text="Нажмите [Н] для нового приключения | [З] для загрузки | [В] для выхода" 
+                      TextWrapping="Wrap"/>
+        </Border>
+    </Grid>
+</Window>
+

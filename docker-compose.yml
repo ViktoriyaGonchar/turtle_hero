@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Сервис для разработки
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      # Монтируем код для live reload
+      - .:/workspace
+      # Кэш NuGet
+      - nuget-cache:/root/.nuget
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+  # Сервис для сборки и тестирования
+  build-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    volumes:
+      - .:/src
+    working_dir: /src
+
+volumes:
+  nuget-cache:
+

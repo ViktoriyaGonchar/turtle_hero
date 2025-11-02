@@ -1,0 +1,24 @@
+# Игнорируем ненужные файлы при сборке Docker образа
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/.idea/
+**/.user
+**/node_modules/
+**/.git/
+**/.gitignore
+**/README.md
+**/LICENSE
+**/*.md
+**/*.txt
+!README.md
+**/Dockerfile
+**/docker-compose.yml
+**/.dockerignore
+**/assets/saves/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
